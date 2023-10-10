@@ -1,0 +1,53 @@
+---
+const steps = [
+  {
+    title: 'Pick your coffee',
+    description:
+      'Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out.',
+    descriptionClass: 'md:max-w-[26ch] lg:max-w-[31ch]',
+  },
+  {
+    title: 'Choose the frequency',
+    description:
+      'Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.',
+    descriptionClass: 'md:max-w-[25ch] lg:max-w-[31ch]',
+  },
+  {
+    title: 'Receive and enjoy!',
+    description:
+      'We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.',
+    descriptionClass: 'md:max-w-[24ch] lg:max-w-[31ch]',
+  },
+]
+---
+
+<section
+  class="bg-[#2C343E] -mx-6 md:-mx-10 lg:mx-0 mt-[120px] md:mt-[144px] lg:mt-[168px] py-20 md:pt-[97px] md:pb-[70px] lg:py-[100px] px-6 md:px-10 lg:px-[85px] rounded-[10px]"
+>
+  <div
+    class="mb-[67px] hidden w-full max-w-[497px] items-center justify-between md:flex lg:max-w-[760px] [&>*]:flex-1"
+  >
+    <div class="h-[31px] max-w-[31px] rounded-full border-2 border-dark-cyan"></div>
+    <div class="h-[2px] bg-pale-orange"></div>
+    <div class="h-[31px] max-w-[31px] rounded-full border-2 border-dark-cyan"></div>
+    <div class="h-[2px] bg-pale-orange"></div>
+    <div class="h-[31px] max-w-[31px] rounded-full border-2 border-dark-cyan"></div>
+  </div>
+  <ol class="flex max-w-[1045px] flex-col gap-14 md:flex-row md:gap-2.5">
+    {
+      steps.map((step, index) => (
+        <li class="flex-1 text-center md:text-left">
+          <span class="text-pale-orange heading-1">0{index + 1}</span>
+          <p class="my-6 font-heading text-[28px] text-white font-black leading-[32px] md:mb-[38px] md:mt-[42px] md:max-w-[159px]">
+            {step.title}
+          </p>
+          <p
+            class={`text-[15px] lg:text-base lg:leading-[26px] leading-[25px] text-white ${step.descriptionClass}`}
+          >
+            {step.description}
+          </p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

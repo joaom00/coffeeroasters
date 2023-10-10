@@ -1,0 +1,54 @@
+---
+import { getImage } from 'astro:assets'
+
+import heroDesktop from '../../assets/about/desktop/image-hero-whitecup.jpg'
+import heroMobile from '../../assets/about/mobile/image-hero-whitecup.jpg'
+import heroTablet from '../../assets/about/tablet/image-hero-whitecup.jpg'
+
+const heroMobileOpt = await getImage({ src: heroMobile, format: 'avif', quality: 'low' })
+const heroTabletOpt = await getImage({ src: heroTablet, format: 'avif', quality: 'low' })
+const heroDesktopOpt = await getImage({ src: heroDesktop, format: 'avif' })
+---
+
+<main class="overflow-hidden rounded-[10px] grid-stack">
+  <picture class="w-full">
+    <source
+      media="(max-width: 767px)"
+      srcset={heroMobileOpt.src}
+      width={heroMobileOpt.attributes.width}
+      height={heroMobileOpt.attributes.height}
+    />
+    <source
+      media="(min-width: 1100px)"
+      srcset={heroDesktopOpt.src}
+      width={heroDesktopOpt.attributes.width}
+      height={heroDesktopOpt.attributes.height}
+    />
+    <source
+      media="(min-width: 768px)"
+      srcset={heroTabletOpt.src}
+      width={heroTabletOpt.attributes.width}
+      height={heroTabletOpt.attributes.height}
+    />
+    <img
+      src={heroDesktopOpt.src}
+      alt=""
+      width={heroDesktopOpt.attributes.width}
+      height={heroDesktopOpt.attributes.height}
+      loading="eager"
+      fetchpriority="high"
+      class="w-full"
+    />
+  </picture>
+
+  <div
+    class="flex flex-col items-center justify-center px-6 text-center md:items-start md:px-0 md:pl-[85px] md:text-left"
+  >
+    <h1 class="max-w-[12ch] text-light-cream heading-2">About Us</h1>
+    <p class="mb-10 mt-6 max-w-[49ch] text-light-cream lg:mb-14">
+      Coffeeroasters began its journey of exotic discovery in 1999, highlighting stories of coffee
+      from around the world. We have since been dedicated to bring the perfect cup - from bean to
+      brew - in every shipment.
+    </p>
+  </div>
+</main>

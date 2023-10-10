@@ -1,0 +1,50 @@
+---
+import { getImage } from 'astro:assets'
+
+import australiaSvg from '../../assets/about/desktop/illustration-australia.svg'
+import ukSvg from '../../assets/about/desktop/illustration-uk.svg'
+import canadaSvg from '../../assets/about/desktop/illustration-canada.svg'
+
+const canada = await getImage({ src: canadaSvg })
+const uk = await getImage({ src: ukSvg })
+const australia = await getImage({ src: australiaSvg })
+---
+
+<section class="flex flex-col items-center justify-start md:space-y-0 lg:mx-[85px]">
+  <h1 class="w-full text-center text-grey heading-4 sm:text-start">Our headquarters</h1>
+
+  <div
+    class="grid w-fit grid-cols-1 items-center justify-center gap-24 pt-[72px] text-dark-grey-blue sm:w-full sm:grid-cols-3"
+  >
+    <div class="flex flex-col items-center justify-start text-center sm:items-start sm:text-start">
+      <img src={uk.src} alt="australia" />
+
+      <h2 class="w-full pb-[21px] pt-[48px] text-dark-grey-blue heading-4 lg:heading-3">
+        United Kingdom
+      </h2>
+      <div>
+        <p>68 Asfordby Rd<br />Alcaston<br />SY6 1YA<br />+44 1241 918425</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-start text-center sm:items-start sm:text-start">
+      <img src={canada.src} alt="australia" />
+
+      <h2 class="w-full pb-[21px] pt-[48px] text-dark-grey-blue heading-4 lg:heading-3">Canada</h2>
+      <div>
+        <p>1528 Eglinton Avenue<br />Toronto<br />Ontario M4P 1A6<br />+1 416 485 2997</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-start text-center sm:items-start sm:text-start">
+      <img src={australia.src} alt="australia" />
+
+      <h2 class="w-full pb-[21px] pt-[48px] text-dark-grey-blue heading-4 lg:heading-3">
+        Australia
+      </h2>
+      <div>
+        <p>36 Swanston Street<br />Kewell<br />Victoria<br />+61 4 9928 3629</p>
+      </div>
+    </div>
+  </div>
+</section>

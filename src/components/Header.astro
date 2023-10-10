@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets'
+
+import logo from '../assets/shared/desktop/logo.svg'
+import hamburgerIcon from '../assets/shared/mobile/icon-hamburger.svg'
+import closeIcon from '../assets/shared/mobile/icon-close.svg'
+import Dialog from '../components/Dialog'
+---
+
+<header
+  class="flex items-center justify-between pb-10 pt-8 md:pb-[53px] md:pt-10 lg:py-[43px] container"
+>
+  <Image src={logo} alt="logo" width="163" height="18" />
+
+  <Dialog client:media="(max-width: 768px)">
+    <Image
+      src={hamburgerIcon}
+      alt="logo"
+      class="group-data-[state=open]:hidden group-data-[state=closed]:block"
+    />
+    <Image
+      src={closeIcon}
+      alt="logo"
+      class="group-data-[state=open]:block group-data-[state=closed]:hidden"
+    />
+  </Dialog>
+
+  <nav class="hidden md:block">
+    <ul
+      class="flex flex-row items-center justify-center space-x-8 text-xs font-bold uppercase 2xl:text-sm"
+    >
+      <li>
+        <a href="/" class="text-grey transition-colors duration-300 hover:text-dark-grey-blue"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a href="/about" class="text-grey transition-colors duration-300 hover:text-dark-grey-blue"
+          >About us</a
+        >
+      </li>
+      <li>
+        <a
+          href="/subscribe"
+          class="text-grey transition-colors duration-300 hover:text-dark-grey-blue"
+          >Create your plan</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

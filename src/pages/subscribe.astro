@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import Hero from '../components/subscribe/Hero.astro'
+import Steps from '../components/subscribe/Steps.astro'
+import Chooses from '../components/subscribe/Chooses.tsx'
+---
+
+<Layout title="Coffeeroasters subscription site">
+  <Hero />
+  <Steps />
+  <Chooses client:visible />
+</Layout>

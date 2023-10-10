@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets'
+
+import dancheImage from '../../assets/home/desktop/image-danche.png'
+import granEspressoImage from '../../assets/home/desktop/image-gran-espresso.png'
+import piccolloImage from '../../assets/home/desktop/image-piccollo.png'
+import planaltoImage from '../../assets/home/desktop/image-planalto.png'
+---
+
+<section class="mx-auto pb-[120px] pt-[136px] lg:max-w-[1111px] lg:pb-[200px]">
+  <h2
+    class="mb-10 bg-[linear-gradient(180deg,hsl(215_19%_25%/0.6)_0%,hsl(43_78%_98%/0)_100%)] text-center heading-2 md:-mb-14 md:heading-title-tablet lg:-mb-24 lg:bg-[linear-gradient(180deg,hsl(215_19%_25%/0.4)_0%,hsl(43_78%_98%/0)_80%)] lg:heading-title"
+    style={{
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+    }}
+  >
+    our collection
+  </h2>
+  <div>
+    <ul class="flex flex-col gap-12 md:items-center lg:flex-row">
+      <li
+        class="flex flex-1 flex-col items-center text-center md:flex-row md:text-left lg:flex-col lg:gap-[70px] lg:text-center"
+      >
+        <Image
+          format="avif"
+          src={granEspressoImage}
+          alt=""
+          sizes="(min-width: 1024px) 255px, 200px"
+          class="w-[200px] md:w-[255px] h-auto"
+        />
+        <div class="flex flex-col gap-4 md:gap-6">
+          <h3 class="heading-4">Gran Espresso</h3>
+          <p class="max-w-[282px]">
+            Light and flavorful blend with cocoa and black pepper for an intense experience
+          </p>
+        </div>
+      </li>
+      <li
+        class="flex flex-1 flex-col items-center text-center md:flex-row md:text-left lg:flex-col lg:gap-[70px] lg:text-center"
+      >
+        <Image
+          format="avif"
+          src={planaltoImage}
+          alt=""
+          sizes="(min-width: 1024px) 255px, 200px"
+          class="w-[200px] md:w-[255px] h-auto"
+        />
+        <div class="flex flex-col gap-4 md:gap-6">
+          <h3 class="heading-4">Planalto</h3>
+          <p class="max-w-[282px]">
+            Brazilian dark roast with rich and velvety body, and hints of fruits and nuts
+          </p>
+        </div>
+      </li>
+      <li
+        class="flex flex-1 flex-col items-center text-center md:flex-row md:text-left lg:flex-col lg:gap-[70px] lg:text-center"
+      >
+        <Image
+          format="avif"
+          src={piccolloImage}
+          alt=""
+          sizes="(min-width: 1024px) 255px, 200px"
+          class="w-[200px] md:w-[255px] h-auto"
+        />
+        <div class="flex flex-col gap-4 md:gap-6">
+          <h3 class="heading-4">Piccollo</h3>
+          <p class="max-w-[282px] lg:max-w-[261px]">
+            Mild and smooth blend featuring notes of toasted almond and dried cherry
+          </p>
+        </div>
+      </li>
+      <li
+        class="flex flex-1 flex-col items-center text-center md:flex-row md:text-left lg:flex-col lg:gap-[70px] lg:text-center"
+      >
+        <Image
+          format="avif"
+          src={dancheImage}
+          alt=""
+          sizes="(min-width: 1024px) 255px, 200px"
+          class="w-[200px] md:w-[255px] h-auto"
+        />
+        <div class="flex flex-col gap-4 md:gap-6">
+          <h3 class="heading-4">Danche</h3>
+          <p class="max-w-[282px] lg:max-w-[267px]">
+            Ethiopian hand-harvested blend densely packed with vibrant fruit notes
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

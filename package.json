@@ -1,0 +1,38 @@
+{
+  "name": "astro-template",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.0.1",
+    "@astrojs/tailwind": "^5.0.0",
+    "@fontsource-variable/fraunces": "^5.0.9",
+    "@fontsource/barlow": "^5.0.8",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.0.4",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^3.0.3",
+    "clsx": "^2.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "sharp": "^0.32.5",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
+    "prettier-plugin-organize-imports": "^3.2.3"
+  }
+}

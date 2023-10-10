@@ -1,0 +1,38 @@
+---
+import { getImage } from 'astro:assets'
+
+import heroDesktop from '../../assets/about/desktop/image-quality.jpg'
+import heroMobile from '../../assets/about/mobile/image-quality.jpg'
+import heroTablet from '../../assets/about/tablet/image-quality.jpg'
+
+const heroMobileOpt = await getImage({ src: heroMobile, format: 'avif' })
+const heroTabletOpt = await getImage({ src: heroTablet, format: 'avif' })
+const heroDesktopOpt = await getImage({ src: heroDesktop, format: 'avif' })
+---
+
+<section
+  class="relative !mt-[192px] grid max-w-none justify-center rounded-[10px] bg-gunmetal xl:max-w-[1280px] xl:justify-start"
+>
+  <div
+    class="absolute -top-[5%] left-[35%] right-0 z-10 -translate-x-[25%] -translate-y-[25%] grid-stack sm:-top-[15%] md:-top-[5%] xl:-top-[88px] xl:left-auto xl:right-[85px] xl:translate-x-0 xl:translate-y-0"
+  >
+    <picture>
+      <source media="(max-width: 767px)" srcset={heroMobileOpt.src} />
+      <source media="(min-width: 1280px)" srcset={heroDesktopOpt.src} />
+      <source media="(min-width: 768px)" srcset={heroTabletOpt.src} />
+      <img src={heroDesktopOpt.src} alt="" {...heroDesktopOpt.attributes} class="rounded-[10px]" />
+    </picture>
+  </div>
+
+  <div
+    class="max-w-none items-center justify-center px-6 pt-[142px] text-center md:px-[74px] md:pt-[224px] xl:max-w-[540px] xl:items-start xl:px-0 xl:pl-[85px] xl:pr-0 xl:pt-[85px] xl:text-left"
+  >
+    <h1 class="text-light-cream heading-3 md:heading-2">Uncompromising quality</h1>
+    <p class="mb-[60px] mt-8 text-light-cream md:mb-[120px]">
+      Although we work with growers who pay close attention to all stages of harvest and processing,
+      we employ, on our end, a rigorous quality control program to avoid over-roasting or baking the
+      coffee dry. Every bag of coffee is tagged with a roast date and batch number. Our goal is to
+      roast consistent, user-friendly coffee, so that brewing is easy and enjoyable.
+    </p>
+  </div>
+</section>
