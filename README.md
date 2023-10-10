@@ -59,7 +59,7 @@ The site will be available at [http://localhost:4321](http://localhost:4321/).
 
 ## Deploy on Vercel
 
-This project is deployed on Vercel. You can access the live site at [Vercel deploy](https://in-dev-coffeeroasters-subscription-site.vercel.app/).
+This project is deployed on Vercel. You can access the live site at [Vercel deploy](https://coffeeroasters-ten.vercel.app/).
 
 ## Project Structure
 
